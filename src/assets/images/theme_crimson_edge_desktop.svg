@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <radialGradient id="red-bg-glow" cx="80%" cy="60%" r="60%">
+      <stop offset="0%" stop-color="#2a080c" stop-opacity="0.7"/>
+      <stop offset="60%" stop-color="#0a0506" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#040203" stop-opacity="1"/>
+    </radialGradient>
+    <filter id="neon-red-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="14" result="glow1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="glow2"/>
+      <feMerge>
+        <feMergeNode in="glow1"/>
+        <feMergeNode in="glow2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="blade-edge-1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#ff1e38" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#b91c1c" stop-opacity="0.7"/>
+    </linearGradient>
+    <linearGradient id="blade-edge-2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dc2626" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#ff2e4d" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#7f1d1d" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1920" height="1080" fill="#050203"/>
+  <rect width="1920" height="1080" fill="url(#red-bg-glow)"/>
+  
+  <!-- Ambient Red Soft Glows -->
+  <circle cx="1400" cy="700" r="450" fill="#dc2626" opacity="0.1" filter="blur(110px)"/>
+  <circle cx="700" cy="300" r="380" fill="#991b1b" opacity="0.08" filter="blur(90px)"/>
+  
+  <!-- Sweeping Layer 1 (Back Blade) -->
+  <path d="M -100 800 Q 600 400, 1600 1150 L 1920 1080 L 1920 1200 L -100 1200 Z" fill="#090507" opacity="0.9"/>
+  <path d="M -100 800 Q 600 400, 1600 1150" fill="none" stroke="url(#blade-edge-2)" stroke-width="3" filter="url(#neon-red-glow)"/>
+  
+  <!-- Sweeping Layer 2 (Middle Ribbon) -->
+  <path d="M 200 -100 Q 900 200, 1920 900 L 1920 1080 L -100 1080 L -100 -100 Z" fill="#0d080a" opacity="0.95"/>
+  <path d="M 200 -100 Q 900 200, 1920 900" fill="none" stroke="url(#blade-edge-1)" stroke-width="4.5" filter="url(#neon-red-glow)"/>
+  
+  <!-- Sweeping Layer 3 (Foreground Accent Arch) -->
+  <path d="M 700 450 Q 1200 650, 1750 1150" fill="none" stroke="url(#blade-edge-1)" stroke-width="3.5" filter="url(#neon-red-glow)"/>
+</svg>

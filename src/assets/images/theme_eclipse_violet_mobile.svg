@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="100%" height="100%">
+  <defs>
+    <radialGradient id="violet-m-bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#140c24" stop-opacity="0.85"/>
+      <stop offset="60%" stop-color="#08040f" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#020104" stop-opacity="1"/>
+    </radialGradient>
+    <filter id="soft-violet-m-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="g1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="g2"/>
+      <feMerge>
+        <feMergeNode in="g1"/>
+        <feMergeNode in="g2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="crescent-m-top" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e9d5ff" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#c084fc" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#6b21a8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="crescent-m-bottom" x1="100%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#d8b4fe" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#a855f7" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#581c87" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1080" height="1920" fill="#020104"/>
+  <rect width="1080" height="1920" fill="url(#violet-m-bg)"/>
+  
+  <ellipse cx="540" cy="960" rx="350" ry="450" fill="#581c87" opacity="0.12" filter="blur(90px)"/>
+  
+  <!-- Sphere 1 (Top Sphere) -->
+  <circle cx="520" cy="650" r="340" fill="#090513" stroke="#1c1130" stroke-width="2.5"/>
+  <path d="M 220 580 A 340 340 0 0 1 820 530" fill="none" stroke="url(#crescent-m-top)" stroke-width="4" stroke-linecap="round" filter="url(#soft-violet-m-glow)"/>
+  
+  <!-- Sphere 2 (Bottom Sphere forming S) -->
+  <circle cx="560" cy="1250" r="410" fill="#07030e" stroke="#170c28" stroke-width="2.5"/>
+  <path d="M 280 1480 A 410 410 0 0 0 960 1350" fill="none" stroke="url(#crescent-m-bottom)" stroke-width="4" stroke-linecap="round" filter="url(#soft-violet-m-glow)"/>
+</svg>

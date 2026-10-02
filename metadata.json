@@ -1,0 +1,6 @@
+{
+  "name": "Tenex Platform",
+  "description": "Premium dark glassmorphic web platform featuring marketplace, financial balance & baki management, real-time chat, modular productivity tools, and full admin control panel.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <radialGradient id="violet-bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#120c1f" stop-opacity="0.8"/>
+      <stop offset="60%" stop-color="#07040d" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#020104" stop-opacity="1"/>
+    </radialGradient>
+    <filter id="soft-violet-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="g1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="g2"/>
+      <feMerge>
+        <feMergeNode in="g1"/>
+        <feMergeNode in="g2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="crescent-top" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d8b4fe" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#a855f7" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#581c87" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="crescent-bottom" x1="100%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#c084fc" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#9333ea" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#3b0764" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1920" height="1080" fill="#020104"/>
+  <rect width="1920" height="1080" fill="url(#violet-bg)"/>
+  
+  <!-- Subtle center ambient purple glow -->
+  <ellipse cx="960" cy="540" rx="420" ry="380" fill="#6b21a8" opacity="0.1" filter="blur(100px)"/>
+  
+  <!-- Sphere 1 (Top-Left Center) -->
+  <circle cx="920" cy="380" r="260" fill="#080511" stroke="#170c29" stroke-width="2"/>
+  <!-- Top Crescent Rim Highlight -->
+  <path d="M 680 340 A 260 260 0 0 1 1160 300" fill="none" stroke="url(#crescent-top)" stroke-width="3" stroke-linecap="round" filter="url(#soft-violet-glow)"/>
+  
+  <!-- Sphere 2 (Bottom-Right Center, forming S) -->
+  <circle cx="1000" cy="700" r="290" fill="#06030c" stroke="#120822" stroke-width="2"/>
+  <!-- Bottom Crescent Rim Highlight -->
+  <path d="M 800 840 A 290 290 0 0 0 1280 750" fill="none" stroke="url(#crescent-bottom)" stroke-width="3" stroke-linecap="round" filter="url(#soft-violet-glow)"/>
+</svg>
